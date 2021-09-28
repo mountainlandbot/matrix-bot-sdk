@@ -59,4 +59,14 @@ export class PantalaimonClient {
         // We recreate the client to ensure we set it up with the right storage provider.
         return new MatrixClient(this.homeserverUrl, authedClient.accessToken, this.storageProvider);
     }
+
+    /**
+     * Authenticates and creates the Pantalaimon-capable client using an access token.
+     *
+     * @param {string} accessToken The access token to use
+     * @returns {Promise<MatrixClient>} Resolves to a MatrixClient ready for interacting with Pantalaimon.
+     */
+    public async createClientWithToken(accessToken: string): Promise<MatrixClient> {
+        return new MatrixClient(this.homeserverUrl, accessToken, this.storageProvider);
+    }
 }
