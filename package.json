@@ -21,7 +21,8 @@
     "build:examples": "tsc -p tsconfig-examples.json",
     "example:appservice": "yarn build:examples && node lib/examples/appservice.js",
     "example:login_register": "yarn build:examples && node lib/examples/login_register.js",
-    "example:encryption_bot": "yarn build:examples && node lib/examples/encryption_bot.js"
+    "example:encryption_bot": "yarn build:examples && node lib/examples/encryption_bot.js",
+    "postinstall": "tsc --outDir ./build"
   },
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
